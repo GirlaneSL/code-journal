@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { LoginDto } from './dto/login.dto.js';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service.js';
@@ -11,9 +11,16 @@ export class AuthService {
     ) { }
 
     async login(loginDto: LoginDto): Promise<{ access_token: string }> {
-        const user = await this.usersService.findOne(loginDto.email);
+        const user = await this.usersService.findOne(loginDto.email).catch((error) => {
+            if (error instanceof NotFoundException) return null;
+            throw error
+        });
 
-        const payload = { sub: user?.id, email: user?.email };
+        if (!user || user.passwordHash !== loginDto.passwordHash) {
+            throw new UnauthorizedException('Access denied');
+        }
+
+        const payload = { sub: user.id, email: user.email };
 
         return {
             access_token: await this.jwtService.signAsync(payload),
