@@ -1,0 +1,9 @@
+{
+    "name": "code-journal",
+    "private": true,
+    "packageManager": "npm@11.16.0",
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ]
+}
