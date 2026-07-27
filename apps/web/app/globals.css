@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-space);
+  --font-body: var(--font-serif);
+  --font-mono: var(--font-code);
+}
+
+.input-login {
+    @apply mb-5 w-full border border-[#DEDED6] bg-[#FCFCFA] px-3 py-[11px];
+}
+
+.label-login {
+@apply mb-[6px] block font-mono text-[11.5px] uppercase tracking-[0.05em] text-[#83888F];
+}
