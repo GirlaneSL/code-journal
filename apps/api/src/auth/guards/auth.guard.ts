@@ -1,6 +1,7 @@
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { Request } from "express";
+import type { AuthPayload } from "@code-journal/types";
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -13,7 +14,7 @@ export class AuthGuard implements CanActivate {
         if (!token) throw new UnauthorizedException('Access denied');
 
         try {
-            const payload = await this.jwtService.verifyAsync(token);
+            const payload = await this.jwtService.verifyAsync<AuthPayload>(token);
             request['user'] = payload;
         } catch {
             throw new UnauthorizedException('Access denied');

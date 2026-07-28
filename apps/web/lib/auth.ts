@@ -1,11 +1,13 @@
-export const login = async (email: string, password: string) => {
-    const respose = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
+import type { LoginResponse } from "@code-journal/types";
+
+export const login = async (email: string, password: string): Promise<LoginResponse> => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
     })
 
-    if (!respose.ok) throw new Error('Invalid credentials');
+    if (!response.ok) throw new Error('Invalid credentials');
 
-    return respose.json()
+    return response.json()
 }
