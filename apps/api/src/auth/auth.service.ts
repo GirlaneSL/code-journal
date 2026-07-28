@@ -16,7 +16,7 @@ export class AuthService {
             throw error
         });
 
-        if (!user || user.passwordHash !== loginDto.passwordHash) {
+        if (!user || user.passwordHash !== loginDto.password) {
             throw new UnauthorizedException('Access denied');
         }
 
