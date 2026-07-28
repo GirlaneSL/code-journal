@@ -46,6 +46,9 @@ pids/
 *.tsbuildinfo
 next-env.d.ts
 
+# Prisma
+apps/api/generated/prisma
+
 # IDEs
 .vscode/*
 !.vscode/settings.json
