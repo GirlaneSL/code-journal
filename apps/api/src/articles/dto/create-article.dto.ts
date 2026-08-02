@@ -10,4 +10,7 @@ export class CreateArticleDto {
 
   @IsString()
   content: string;
+
+  @IsNotEmpty()
+  excerpt: string;
 }

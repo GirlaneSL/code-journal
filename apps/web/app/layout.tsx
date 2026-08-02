@@ -42,7 +42,7 @@ export default function RootLayout({
         antialiased
       `}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#F6F6F2]">
         {children}
       </body>
     </html>
