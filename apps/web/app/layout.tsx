@@ -5,6 +5,7 @@ import {
   JetBrains_Mono,
 } from "next/font/google";
 import "./globals.css";
+import PreviewControls from "./components/PreviewControls";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
@@ -43,6 +44,7 @@ export default function RootLayout({
       `}
     >
       <body className="min-h-full flex flex-col bg-[#F6F6F2]">
+        <PreviewControls />
         {children}
       </body>
     </html>
