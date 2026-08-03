@@ -15,6 +15,12 @@ export interface User {
     updatedAt: Date;
 }
 
+export interface Project {
+    name: string;
+    description: string;
+    githubUrl: string;
+}
+
 export interface AuthPayload {
     sub: number;
     email: string;

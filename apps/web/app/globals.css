@@ -13,3 +13,27 @@
 .label-login {
 @apply mb-[6px] block font-mono text-[11.5px] uppercase tracking-[0.05em] text-[#83888F];
 }
+
+.initial-title{
+  @apply text-[#83888F] uppercase font-mono text-xs mb-[10px] leading-[1.65] tracking-[0.08em]
+}
+
+.initial-paragraph{
+  @apply text-[#4A4F57] font-body text-[17px] sm:text-[19px] max-w-[52ch] mb-[6px] leading-[1.65]
+}
+
+.content-entry {
+  @apply font-mono leading-[1.65]
+}
+
+.content-title {
+  @apply text-[#181A1E] text-[22px] font-display tracking-[-.01em] font-semibold
+}
+
+.content-description {
+  @apply text-[#4A4F57] text-[16px] max-w-[58ch] font-body
+}
+
+.content-title-link {
+  @apply hover:text-[#2E4F8C] hover:underline hover:underline-offset-3;
+}
