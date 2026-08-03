@@ -1,4 +1,4 @@
-import ArticleComponent from "./components/ArticleComponent";
+import ArticleComponent from "./components/ArticlesComponent";
 
 export default function Home() {
   return (

@@ -6,6 +6,8 @@ const ScreenSelect = () => {
     const router = useRouter()
     const pathname = usePathname()
 
+    const isArticle = pathname.startsWith('/articles')
+
     const screens = [
         { name: 'home', path: '/' },
         { name: 'admin · login', path: '/auth/login' },
@@ -22,6 +24,9 @@ const ScreenSelect = () => {
                     {screen.name}
                 </option>
             ))}
+            {isArticle && (
+                <option value={pathname}>artigo</option>
+            )}
         </select>
     )
 }
