@@ -24,7 +24,7 @@ const ProjectsComponent = () => {
         <div className="my-[34px]">
             {projectsList.map((project) => (
                 <div key={project.githubUrl} className="content-entry flex">
-                    <div>
+                    <div className="flex flex-col gap-[10px]">
                         <h2 className="content-title">{project.name}</h2>
                         <p className="content-description">{project.description}</p>
                     </div>

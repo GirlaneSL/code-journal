@@ -37,3 +37,7 @@
 .content-title-link {
   @apply hover:text-[#2E4F8C] hover:underline hover:underline-offset-3;
 }
+
+.nav-link {
+  @apply text-[13px] text-[#4A4F57] py-1 before:content-['/'] before:text-[#DEDEd6] before:mr-[2px]
+}

@@ -7,6 +7,7 @@ import {
 import "./globals.css";
 import PreviewControls from "./components/PreviewControls";
 import SideText from "./components/SideText";
+import Navbar from "./components/Navbar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
@@ -45,6 +46,7 @@ export default function RootLayout({
       `}
     >
       <body className="min-h-full flex flex-col bg-[#F6F6F2]">
+        <Navbar />
         <SideText />
         <PreviewControls />
         {children}
