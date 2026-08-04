@@ -11,6 +11,7 @@ const ScreenSelect = () => {
     const screens = [
         { name: 'home', path: '/' },
         { name: 'projetos', path: '/projects' },
+        { name: 'sobre', path: '/about' },
         { name: 'admin · login', path: '/auth/login' },
     ]
 

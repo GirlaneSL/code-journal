@@ -41,3 +41,23 @@
 .nav-link {
   @apply text-[13px] text-[#4A4F57] py-1 before:content-['/'] before:text-[#DEDEd6] before:mr-[2px]
 }
+
+.tag {
+  @apply font-mono text-[12px] text-[#4A4F57] bg-[#EEEEE7] border border-[#DEDEd6] py-[3px] px-[8px]
+}
+
+.about-titles {
+  @apply text-[15px] font-mono uppercase tracking-[.08em] text-[#83888F] font-medium mb-[12px] mt-[30px]
+}
+
+.link-list {
+  @apply py-[6px] border-b border-b-[#E9E9E2] flex justify-between
+}
+
+.list-item {
+  @apply font-mono text-[#181A1E] text-[14px]
+}
+
+.link-item {
+  @apply font-mono text-[#2E4F8C] text-[14px]
+}

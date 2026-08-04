@@ -8,6 +8,7 @@ const Navbar = () => {
                 <nav className="flex gap-3 sm:flex-wrap">
                     <Link className="nav-link" href={'/'}>artigos</Link>
                     <Link className="nav-link" href={'/projects'}>projetos</Link>
+                    <Link className="nav-link" href={'/about'}>sobre</Link>
                 </nav>
             </div>
         </header>
