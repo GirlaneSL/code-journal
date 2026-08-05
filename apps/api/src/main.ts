@@ -6,8 +6,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: 'http://localhost:3000'
-  })
+    origin: [
+      'http://localhost:3000',
+      'https://code-journal-web-nine.vercel.app',
+    ]
+  });
 
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
