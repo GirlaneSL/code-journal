@@ -20,4 +20,4 @@ Vantagens:
 - padroniza ferramentas, scripts e convenções do projeto.
 
 Desvantagens:
-- repositório tende a crescer com o tempo;
+- repositório tende a crescer com o tempo.

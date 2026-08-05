@@ -1,19 +1,29 @@
 'use client'
 
 import { usePathname, useRouter } from "next/navigation"
+import { useEffect, useState } from "react";
 
 const ScreenSelect = () => {
     const router = useRouter()
     const pathname = usePathname()
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+    useEffect(() => {
+        setIsAuthenticated(!!localStorage.getItem('access_token'))
+    }, [])
 
     const isArticle = pathname.startsWith('/articles')
 
-    const screens = [
+    let screens = [
         { name: 'home', path: '/' },
         { name: 'projetos', path: '/projects' },
         { name: 'sobre', path: '/about' },
         { name: 'admin · login', path: '/auth/login' },
     ]
+
+    if (isAuthenticated) {
+        screens = [...screens, { name: 'novo artigo', path: '/admin/articles/new' }]
+    }
 
     return (
         <select

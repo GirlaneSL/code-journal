@@ -17,6 +17,7 @@ const LoginComponent = () => {
         try {
             const data = await login(email, password);
             localStorage.setItem('access_token', data.access_token);
+            window.location.href = '/admin/articles/new'
         } catch (error) {
             setError('Incorrect email or password');
         } finally {
@@ -38,13 +39,13 @@ const LoginComponent = () => {
 
             <form className="flex flex-col" onSubmit={handleSubmit}>
                 <div className="mb-[18px]">
-                    <label htmlFor="email" className="label-login">
+                    <label htmlFor="email" className="form-label">
                         Email
                     </label>
                     <input
                         id="email"
                         type="email"
-                        className="input-login"
+                        className="form-input"
                         placeholder="seu email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -52,13 +53,13 @@ const LoginComponent = () => {
                 </div>
 
                 <div className="mb-[18px]">
-                    <label htmlFor="password" className="label-login">
+                    <label htmlFor="password" className="form-label">
                         Senha
                     </label>
                     <input
                         id="password"
                         type="password"
-                        className="input-login"
+                        className="form-input"
                         placeholder="••••••••"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
