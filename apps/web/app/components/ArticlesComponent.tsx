@@ -23,7 +23,7 @@ const ArticleComponent = () => {
     return (
         <div className="my-[34px]">
             {articlesList.map((article) => (
-                <div key={article.id} className="content-entry flex flex-col gap-2">
+                <div key={article.id} className="content-entry flex flex-col gap-2 border-b border-b-[#E9E9E2] py-[26px]">
                     <p className="text-[#83888F] text-[12px]">{new Date(article.createdAt).toLocaleDateString('pt-BR')}</p>
                     <Link href={`/articles/${article.slug}`}>
                         <h2 className="content-title content-title-link">{article.title}</h2>

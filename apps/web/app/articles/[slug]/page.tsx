@@ -1,5 +1,6 @@
 import { getArticleBySlug } from "@/lib/articles"
 import { notFound } from "next/navigation"
+import ReactMarkdown from 'react-markdown'
 
 interface Props {
     params: {
@@ -31,10 +32,14 @@ const page = async ({ params }: Props) => {
                         <span>/</span>
                         <span>{article.slug}</span>
                     </div>
-                    <div>
+                    <div className="flex flex-col gap-3">
                         <h2 className="text-[#181A1E] text-[27px] sm:text-[34px] font-display tracking-[-.01em] font-semibold leading-[1.15] mb-[14px]">{article.title}</h2>
                         <p className="text-[#83888F] text-[12px]">{new Date(article.createdAt).toLocaleDateString('pt-BR')}</p>
-                        <p className="text-[#181A1E] text-[18px] max-w-[58ch] font-body leading-[1.75]">{article.content}</p>
+                        <div className="prose text-[#181A1E] text-[18px] max-w-[58ch] font-body leading-[1.75]">
+                            <ReactMarkdown>
+                                {article.content}
+                            </ReactMarkdown>
+                        </div>
                     </div>
                 </div>
             </div>
