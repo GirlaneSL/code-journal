@@ -25,13 +25,8 @@ const page = () => {
 
   return (
     <section className="block">
-      <div className="px-[22px] max-w-[660px] sm:mx-auto pt-8">
+      <div className="container px-[22px] sm:mx-auto pt-8">
         <div className="mb-[34px]">
-          <div className="breadcrumb">
-            <span>painel</span>
-            <span>/</span>
-            <span>editar artigo</span>
-          </div>
           <div>
             <h2 className="initial-title">painel administrativo</h2>
             <h1 className="content-title mb-[22px]">Criar Artigo</h1>

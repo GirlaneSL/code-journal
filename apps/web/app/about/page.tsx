@@ -3,7 +3,7 @@ import Link from "next/link"
 const page = () => {
     return (
         <section className="block">
-            <div className="pt-[32px] sm:pt-[44px] flex flex-col mx-auto max-w-[660px] px-[22px]">
+            <div className="container pt-[32px] sm:pt-[44px] flex flex-col mx-auto px-[22px]">
                 <div>
                     <p className="initial-title">sobre</p>
                     <h1 className="content-title mb-[22px]">Girlane da Silva Lima</h1>

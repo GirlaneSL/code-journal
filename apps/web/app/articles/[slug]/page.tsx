@@ -23,7 +23,7 @@ const page = async ({ params }: Props) => {
 
     return (
         <section className="block">
-            <div className="px-[22px] max-w-[660px] sm:mx-auto pt-8">
+            <div className="container px-[22px] sm:mx-auto pt-8">
                 <div className="mb-[34px]">
                     <div className="flex gap-2 font-mono text-[12px] text-[#83888F] mb-3 leading-[1.65] flex-wrap">
                         <span>blog</span>

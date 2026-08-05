@@ -3,7 +3,7 @@ import ProjectsComponent from "../components/ProjectsComponent";
 const page = () => {
     return (
         <section className="block">
-            <div className="pt-[32px] sm:pt-[44px] flex flex-col mx-auto max-w-[660px] px-[22px]">
+            <div className="container pt-[32px] sm:pt-[44px] flex flex-col mx-auto px-[22px]">
                 <div>
                     <h1 className="initial-title">projetos</h1>
                     <p className="initial-paragraph">
