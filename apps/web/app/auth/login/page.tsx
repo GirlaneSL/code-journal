@@ -66,7 +66,7 @@ const LoginComponent = () => {
                     />
                 </div>
 
-                <button className="w-full border border-[#1A1C21] bg-[#1A1C21] px-5 py-[11px] font-mono text-[13px] text-[#ECEDEE] hover:bg-[#2E4F8C] transition-colors duration-300">
+                <button className="w-full btn">
                     Entrar
                 </button>
             </form>

@@ -34,3 +34,18 @@ export const createArticle = async (title: string, slug: string, excerpt: string
 
     return response.json();
 }
+
+export const deleteArticle = async (id: number): Promise<void> => {
+    const token = localStorage.getItem('access_token');
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    });
+
+    if (!response.ok) throw new Error('Failed to delete article')
+
+}

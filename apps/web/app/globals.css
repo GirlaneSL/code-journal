@@ -12,6 +12,10 @@
   @apply max-w-[660px]
 }
 
+.btn {
+  @apply border border-[#1A1C21] bg-[#1A1C21] px-5 py-[11px] font-mono text-[13px] text-[#ECEDEE] hover:bg-[#2E4F8C] transition-colors duration-300 cursor-pointer
+}
+
 .form-input {
     @apply mb-5 w-full border border-[#DEDED6] bg-[#FCFCFA] px-3 py-[11px];
 }
@@ -70,4 +74,8 @@
 
 .breadcrumb {
   @apply flex flex-wrap gap-2 mb-3 font-mono text-[12px] leading-[1.65] text-[#83888F];
+}
+
+.button-actions {
+  @apply border border-[#DEDEd6] bg-[#FCFCFA] text-[#4A4F57] py-[6px] px-[11px] cursor-pointer hover:border-[#181A1E] hover:text-[#181A1E];
 }

@@ -22,7 +22,10 @@ const ScreenSelect = () => {
     ]
 
     if (isAuthenticated) {
-        screens = [...screens, { name: 'novo artigo', path: '/admin/articles/new' }]
+        screens = [...screens,
+        { name: 'novo artigo', path: '/admin/articles/new' },
+        { name: 'admin · artigos', path: '/admin/articles' },
+        ]
     }
 
     return (
