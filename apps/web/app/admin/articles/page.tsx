@@ -1,7 +1,7 @@
 'use client'
 
 import AdmPainelComponent from "@/app/components/AdmPainelComponent"
-import { getArticles } from "@/lib/articles"
+import { deleteArticle, getArticles } from "@/lib/articles"
 import { Article } from "@code-journal/types"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -17,12 +17,24 @@ const page = () => {
 
                 setArticlesList(data)
             } catch (error) {
-                console.error('ERRO AO BUSCAR ARTIGOS:', error)
+            console.error('ERRO AO BUSCAR ARTIGOS:', error)
 
             }
         }
         fetchArticles()
     }, [])
+
+    const handleDelete = async (id: number) => {
+        try {
+            await deleteArticle(id)
+            setArticlesList(prev =>
+                prev.filter(article => article.id !== id)
+            )
+        } catch (error) {
+            console.error('Erro ao excluir artigo:', error)
+
+        }
+    }
 
     return (
         <section className="block">
@@ -60,6 +72,7 @@ const page = () => {
                                     <button
                                         className="button-actions">editar</button>
                                     <button
+                                        onClick={() => handleDelete(article.id)}
                                         className="button-actions">excluir</button>
                                 </div>
 
