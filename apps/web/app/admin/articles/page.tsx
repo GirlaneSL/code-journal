@@ -17,7 +17,7 @@ const page = () => {
 
                 setArticlesList(data)
             } catch (error) {
-            console.error('ERRO AO BUSCAR ARTIGOS:', error)
+                console.error('ERRO AO BUSCAR ARTIGOS:', error)
 
             }
         }
@@ -32,8 +32,11 @@ const page = () => {
             )
         } catch (error) {
             console.error('Erro ao excluir artigo:', error)
-
         }
+    }
+
+    const handleUpdate = async () => {
+
     }
 
     return (

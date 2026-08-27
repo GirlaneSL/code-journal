@@ -47,5 +47,4 @@ export const deleteArticle = async (id: number): Promise<void> => {
     });
 
     if (!response.ok) throw new Error('Failed to delete article')
-
 }
