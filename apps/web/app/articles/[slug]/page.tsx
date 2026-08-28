@@ -2,22 +2,20 @@ import { getArticleBySlug } from "@/lib/articles"
 import { notFound } from "next/navigation"
 import ReactMarkdown from 'react-markdown'
 
-interface Props {
-    params: {
-        slug: string
-    }
-}
+type Props = {
+    params: Promise<{
+        slug: string;
+    }>;
+};
 
 const page = async ({ params }: Props) => {
     const { slug } = await params
 
     let article;
 
-    try {
-        article = await getArticleBySlug(slug)
-        if (!article) {
-        }
-    } catch (error) {
+    article = await getArticleBySlug(slug)
+    if (!article) {
+
         notFound()
     }
 

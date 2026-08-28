@@ -1,6 +1,5 @@
 'use client'
 
-import { useRequiredAuth } from "@/lib/useAuth";
 import { SubmitEventHandler, useState } from "react";
 
 type ArticleFormProps = {

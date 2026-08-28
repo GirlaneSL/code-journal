@@ -18,7 +18,6 @@ const page = () => {
                 setArticlesList(data)
             } catch (error) {
                 console.error('ERRO AO BUSCAR ARTIGOS:', error)
-
             }
         }
         fetchArticles()
@@ -33,10 +32,6 @@ const page = () => {
         } catch (error) {
             console.error('Erro ao excluir artigo:', error)
         }
-    }
-
-    const handleUpdate = async () => {
-
     }
 
     return (
@@ -72,11 +67,14 @@ const page = () => {
                                 </div>
 
                                 <div className="flex gap-2 font-mono text-xs">
-                                    <button
-                                        className="button-actions">editar</button>
+                                    <Link
+                                        href={`/admin/articles/edit/${article.slug}`}
+                                        className="button-actions">editar
+                                    </Link>
                                     <button
                                         onClick={() => handleDelete(article.id)}
-                                        className="button-actions">excluir</button>
+                                        className="button-actions">excluir
+                                    </button>
                                 </div>
 
                             </li>

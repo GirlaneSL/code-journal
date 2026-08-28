@@ -48,3 +48,20 @@ export const deleteArticle = async (id: number): Promise<void> => {
 
     if (!response.ok) throw new Error('Failed to delete article')
 }
+
+export const updateArticle = async (id: number, title: string, slug: string, excerpt: string, content: string): Promise<Article> => {
+    const token = localStorage.getItem('access_token');
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ title, slug, excerpt, content })
+    })
+
+    if (!response.ok) throw new Error('Failed to update article')
+
+    return response.json()
+}
