@@ -12,7 +12,15 @@ const ScreenSelect = () => {
         setIsAuthenticated(!!localStorage.getItem('access_token'))
     }, [])
 
-    const isArticle = pathname.startsWith('/articles')
+    const isArticle = pathname.startsWith('/articles/')
+    const isEditArticle = pathname.startsWith('/admin/articles/edit/')
+
+    const articleSlug = isArticle
+        ? pathname.split('/')[2]
+        : isEditArticle
+            ? pathname.split('/')[4]
+            : null
+
 
     let screens = [
         { name: 'home', path: '/' },
@@ -22,9 +30,17 @@ const ScreenSelect = () => {
     ]
 
     if (isAuthenticated) {
-        screens = [...screens,
-        { name: 'novo artigo', path: '/admin/articles/new' },
-        { name: 'admin · artigos', path: '/admin/articles' },
+        screens = [
+            ...screens,
+            { name: 'admin · novo artigo', path: '/admin/articles/new' },
+            { name: 'admin · artigos', path: '/admin/articles' },
+            ...(articleSlug
+                ? [{
+                    name: 'admin · editar', path: `/admin/articles/edit/${articleSlug}`
+                }]
+                :
+                []
+            )
         ]
     }
 
