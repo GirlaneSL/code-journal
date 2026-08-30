@@ -42,11 +42,11 @@ const page = () => {
                             <span className="list-item">linkedin</span>
                             <a
                                 className="link-item"
-                                href="https://www.linkedin.com/in/seu-usuario"
+                                href="https://www.linkedin.com/in/girlanesl/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                /in/user
+                                /in/girlanesl
                             </a>
                         </li>
 
